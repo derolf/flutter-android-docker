@@ -9,7 +9,7 @@ MAINTAINER kattwinkel@w11k.de
 
 RUN apt-get -qq update && \
   apt-get install -qqy --no-install-recommends \
-  xz-utils \
+  xz-utils openssh-client \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN yes | sdk/tools/bin/sdkmanager --licenses
@@ -28,3 +28,4 @@ ENV PATH $PATH:/flutter/bin/cache/dart-sdk/bin:/flutter/bin
 
 RUN yes | flutter doctor --android-licenses
 RUN flutter doctor
+
