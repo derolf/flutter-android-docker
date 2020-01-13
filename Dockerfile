@@ -5,7 +5,7 @@
 
 FROM  javiersantos/android-ci:28.0.3
 
-MAINTAINER kattwinkel@w11k.de
+MAINTAINER derolf
 
 RUN apt-get -qq update && \
   apt-get install -qqy --no-install-recommends \
@@ -17,7 +17,7 @@ RUN yes | sdk/tools/bin/sdkmanager --licenses
 # Updating build tools to meet flutter requirements 
 RUN /sdk/tools/bin/sdkmanager "platforms;android-28" "build-tools;28.0.3"
 
-ENV FLUTTER_VERSION v1.11.0-beta
+ENV FLUTTER_VERSION v1.12.13+hotfix.6-beta
 WORKDIR /
 
 RUN curl -O https://storage.googleapis.com/flutter_infra/releases/beta/linux/flutter_linux_$FLUTTER_VERSION.tar.xz && \
